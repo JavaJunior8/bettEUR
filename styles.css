@@ -74,6 +74,7 @@ body {
 }
 
 .bold_heading {
+    position: relative;
     font-family: "museo-sans";
     font-size: 40px;
     font-weight: 900;
@@ -82,7 +83,17 @@ body {
     margin-left: 1.8%;
 }
 
+._slogan {
+    position: absolute;
+    right: 18%;
+    margin-top: 10px;
+    word-break:normal;
+    max-width: 100px;
+    text-align: right;
+}
+
 .site_hero {
+    position: absolute;
     border-radius: 0px 200px 15px 0px;
     margin-top: 33px;
     margin-left: -62px;
@@ -91,3 +102,16 @@ body {
     overflow: hidden;
 }
 
+._downarrow {
+    font-family: "museo-sans";
+    font-size: 30px;
+    font-weight: 300;
+    color: #ffffff;
+    position: absolute;
+    left: 48%;
+    bottom: 2.5%;
+    animation: bounce 5s infinite;
+    -webkit-animation: bounce 5s infinite;
+    animation-delay: 10s;
+    -webkit-animation-delay: 10s;
+}
