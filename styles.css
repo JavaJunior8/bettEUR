@@ -34,7 +34,17 @@ a {
     transition: all 0.2s linear;
 }
 
+._alt {
+    color: #ffffff;
+    text-decoration: none;
+    transition: all 0.2s linear;
+}
+
 a:hover {
+    color: #0c8066;
+}
+
+._alt:hover {
     color: #0c8066;
 }
 
@@ -58,6 +68,10 @@ body {
     overscroll-behavior: auto;
 }
 
+h1, h2, h3 {
+    font-family: "museo-sans";
+}
+
 .site_header {
     background-color: #ffffff;
 }
@@ -75,7 +89,6 @@ body {
 
 .bold_heading {
     position: relative;
-    font-family: "museo-sans";
     font-size: 40px;
     font-weight: 900;
     color: #ffffff;
@@ -99,7 +112,32 @@ body {
     margin-left: -62px;
     height: 526px;
     width: 935px;
+    cursor: pointer;
     overflow: hidden;
+    transition: transform .5s ease;
+}
+
+.site_hero:hover {
+    transform: scale(1.05);
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .8s ease;
+}
+
+img:hover {
+    transform: scalee(1.15);
+}
+
+.main_link {
+    position: absolute;
+    right: 10%;
+    margin-top: 36%;
+    font-size: 30px;
+    font-weight: 300;
 }
 
 ._downarrow {
