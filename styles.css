@@ -1,3 +1,5 @@
+/* https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css */
+
 @font-face {
     font-family: 'museo-sans';
     src: url('museo-sans/MuseoSans-300.otf') format('opentype');
@@ -16,7 +18,7 @@
 
 * {
     margin: 0;
-    padding:0
+    padding:0;
 }
 
 html {
@@ -45,7 +47,7 @@ a:hover {
 }
 
 ._alt:hover {
-    color: #0c8066;
+    color: #002328;
 }
 
 ul, li {
@@ -59,7 +61,8 @@ ul, li {
 }
 
 body {
-    background: #002328;
+    background: #000000;
+    height: 100vh;
     font-feature-settings: "palt";
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
@@ -68,8 +71,33 @@ body {
     overscroll-behavior: auto;
 }
 
+[class*="col"]  * + *,
+[class*="container"] > .row{
+  margin-top: 0;
+  margin-bottom: 1.5em;
+}
+
 h1, h2, h3 {
     font-family: "museo-sans";
+}
+
+p {
+    font-family: "museo-sans";
+    font-weight: 300;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+section {
+    display: relative;
+    width: 100%;
+    height: 100vh;
+    /* Scroll Snap */
+    scroll-snap-align: center;
+  }
+
+#_landing {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,35,40,1) 0%, rgba(4,65,60,1) 20%, rgba(6,79,69,1) 40%, rgba(8,94,79,1) 60%, rgba(10,112,91,1) 80%, rgba(12,128,102,1) 100%);
 }
 
 .site_header {
@@ -92,14 +120,13 @@ h1, h2, h3 {
     font-size: 40px;
     font-weight: 900;
     color: #ffffff;
-    margin-top: 33px;
+    padding: 25px;
     margin-left: 1.8%;
 }
 
 ._slogan {
     position: absolute;
     right: 18%;
-    margin-top: 10px;
     word-break:normal;
     max-width: 100px;
     text-align: right;
@@ -108,7 +135,6 @@ h1, h2, h3 {
 .site_hero {
     position: absolute;
     border-radius: 0px 200px 15px 0px;
-    margin-top: 33px;
     margin-left: -62px;
     height: 526px;
     width: 935px;
@@ -126,10 +152,6 @@ img {
     height: 100%;
     object-fit: cover;
     transition: transform .8s ease;
-}
-
-img:hover {
-    transform: scalee(1.15);
 }
 
 .main_link {
@@ -154,10 +176,64 @@ img:hover {
     -webkit-animation-delay: 10s;
 }
 
-/* .second_page {
-    background-color: #ffffff;
-    display: block;
+._downarrow:hover {
+    
+}
+
+#_bento {
+    background-color: #0C8066;
+}
+
+.bento_heading {
     position: relative;
-    width: vmax;
-    height: 300px;
-} */
+    font-size: 40px;
+    font-weight: 900;
+    color: #ffffff;
+    padding: 25px;
+    margin-left: 1.8%;
+}
+
+.bento_container {
+    position: flex;
+    margin-left: 3.4%;
+    width: 100%;
+}
+
+.bento_boxes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-rows: auto;
+    gap: 10px;
+    transition: transform ease .5s ease;
+    max-width: 75%;
+}
+
+
+._box {
+    display: table;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.24);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    border: 1px solid rgba(255, 255, 255, 0.91);
+    transition: transform .5s ease;
+}
+
+._box:hover {
+    transform: scale(1.05);
+}
+
+.bento_header {
+    font-size: 20px;
+    font-weight: 300;
+    margin: 5px;
+    color: #ffffff;
+    position: relative;
+}
+
+.bento_info {
+    margin: 5px;
+    position: relative;
+}
