@@ -1,6 +1,8 @@
+
+
 (function(){
-    var fontSizeSlider = $("#font-size-slider");
-    var fontSizeValueText = $("#font-size-value");
+    var fontSizeSlider = $("#font_size_slider");
+    var fontSizeValueText = $("#font_size_value");
     var htmlElement = $("html");
     var bodyElement = $("body");
     fontSizeValueText.html("Base font size: " + bodyElement.css("font-size"));

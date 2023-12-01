@@ -25,8 +25,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="">
     <link rel="icon" type="image/png" sizes="16x16" href="">
     <link rel="manifest" href="">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
     <body>
+        <!-- navbar -->
         <header class="site_header">
             <div class="container">
                 <div class="site_header_inner">
@@ -42,23 +45,49 @@
                                 <li>Search</li>
                             </ul>
                         </nav>
-                        <div class="col-sm-6">
-                            <input id="font-size-slider" type="range" value="20" min="12" max="30"/>
-                            </div>
-                            <div id="font-size-value" class="col-sm-6">
-                            </div>
                 </div>
             </div>     
         </header>
+
+        <!-- Accesbility tools sticky -->
+        <div class="accs_tools" id="accsTools">
+            <div class="accs_tools_content">
+                <div class="text_slider">
+                    <input id="font_size_slider" type="range" value="20" min="12" max="30"/>
+                    </div>
+                    <div id="font_size_value" class="text_slider">
+                </div>
+                    <!-- Dark/light mode switch -->
+                <div class="theme" id="Theme" x-data @click="$store.ui.toggleTheme()">
+                    <div class="theme_color" :class="{ 'is-selected': $store.ui.theme === 'light' }">
+                        <div class="_cbox"></div>
+                        <div class="_text">Light</div>
+                    </div>
+                    <div class="theme_color" :class="{ 'is-selected': $store.ui.theme === 'dark' }">
+                        <div class="_cbox"></div>
+                        <div class="_text">Dark</div>
+                    </div>
+                </div>
+            </div>
+            <img class="accs_icon" src="/images/accessibility_icon.jpg">
+            <span>Accessibility Tools</span>
+        </div>
+
+        <!-- Landing page -->
         <section id="_landing">
             <div class="site_landing">
                 <h1 class="bold_heading">Erasmus University Rotterdam</h1>
-                <img class="site_hero" src="/images/Plaza.campusWoudestein.CAP_.ChrisGorzeman.jpg" alt="Picture of Erasmus University campus">
+                <div class="hero_wrapper">
+                    <img class="site_hero" src="/images/Plaza.campusWoudestein.CAP_.ChrisGorzeman.jpg" alt="Picture of Erasmus University campus">
+                    <h2 class="main_link _hero_description">Explore our campus</h2>
+                </div>
                 <h1 class="bold_heading _slogan">Making Minds Matter</h1>
                 <h2 class="main_link"><a class="_alt" href="">Lustrum 110 &#11106</a></h2>    
                 <div class="_downarrow">&#8595;&#xFE0E;</div>
             </div>
         </section>
+
+        <!-- Bento style website navigation panel -->
         <section id="_bento">
             <h1 class="bento_heading">Find your way around our digital campus</h1>
                 <div class="bento_container">
@@ -69,23 +98,23 @@
                         </div>
                         <div class="_box">
                             <h1 class="bento_header">Research</h1>
-                            <p class="bento_info">lorem ipsum</p>
+                            <p class="bento_info">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum perferendis dolorem eaque magni quod? Enim velit fuga quaerat deserunt. Est vero eius, quia error pariatur esse dolore voluptatibus voluptas laborum!</p>
                         </div>
                         <div class="_box">
                             <h1 class="bento_header">Campus</h1>
-                            <p class="bento_info">lorem ipsum</p>
+                            <p class="bento_info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint impedit delectus quaerat ratione quae, est libero, aliquid minima dolor blanditiis officia? Earum, error magnam. Veniam cumque dicta porro ipsum architecto.</p>
                         </div>
                         <div class="_box">
                             <h1 class="bento_header">News & Calendar</h1>
-                            <p class="bento_info">lorem ipsum</p>
+                            <p class="bento_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, exercitationem! Sit quasi, laudantium odio nesciunt maxime officiis cum minus dolor exercitationem non ipsum eos consectetur alias impedit doloribus accusantium a.</p>
                         </div>
                         <div class="_box">
                             <h1 class="bento_header">Careers</h1>
-                            <p class="bento_info">lorem ipsum</p>
+                            <p class="bento_info">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa laborum, at assumenda quae magnam fugit similique quidem quia repellat eligendi molestias cupiditate nostrum ipsam porro sunt molestiae id illum. Deserunt?</p>
                         </div>
                         <div class="_box">
                             <h1 class="bento_header">Contact</h1>
-                            <p class="bento_info">lorem ipsum</p>
+                            <p class="bento_info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde, magnam et! Voluptates, nesciunt nisi esse dignissimos accusamus quae veritatis, ratione aliquid aspernatur assumenda, praesentium aperiam magni suscipit voluptatem! Ratione, optio?</p>
                         </div>
                     </div>
             </section>
