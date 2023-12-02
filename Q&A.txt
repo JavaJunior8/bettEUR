@@ -1,0 +1,48 @@
+{
+"questions_and_answers": [
+{
+"question": "Hello",
+"answer": "Hi, feel free to ask any questions you have."
+},
+{
+"question": "What services are there for disabled students?",
+"answer": "Disabled students can access academic adjustments, assistive technology, and accessible transportation services."
+},
+{
+"question": "How to request academic accommodations?",
+"answer": "To request academic accommodations, reach out to the Disability Support Office and submit disability documentation."
+},
+{
+"question": "Any disability scholarships?",
+"answer": "Disability scholarships are available. Visit our financial aid website for more information."
+},
+{
+"question": "Is the campus wheelchair friendly?",
+"answer": "The campus is wheelchair friendly, featuring ramps, elevators, and accessible restrooms."
+},
+{
+"question": "Can I get transport help?",
+"answer": "Transport help is provided through accessible shuttles and assistance services."
+},
+{
+"question": "What mental health support is available?",
+"answer": "Available mental health support includes counseling, support groups, and workshops."
+},
+{
+"question": "How to get a housing accommodation?",
+"answer": "To get a housing accommodation, contact the housing office with your disability documentation."
+},
+{
+"question": "Any student groups for disabilities?",
+"answer": "There are student organizations focused on disabilities."
+},
+{
+"question": "What assistive tech is available?",
+"answer": "Available assistive technology includes screen readers, voice recognition software, and more."
+},
+{
+"question": "How to contact Disability Support Office?",
+"answer": "The Disability Support Office can be contacted via email, phone, or by visiting their campus office."
+}
+]
+}
