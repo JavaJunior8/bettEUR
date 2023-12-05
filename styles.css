@@ -1,5 +1,6 @@
 @font-face {
     font-family: 'museo-sans';
+    src: url('museo-sans/MuseoSans-100.otf') format('opentype');
     src: url('museo-sans/MuseoSans-300.otf') format('opentype');
     src: url('museo-sans/MuseoSans_700.otf') format('opentype');
     src: url('museo-sans/MuseoSans_900.otf') format('opentype');
@@ -71,6 +72,8 @@ ul, li {
     --bg: #002328;
     --accents: #ffffff;
     --nav-font-color: #ffffff;
+    --font-color: #002328;
+    --logo-filter: invert(1);
 }
 
 body {
@@ -96,7 +99,7 @@ h1, h2, h3 {
 
 p {
     font-family: "museo-sans";
-    font-weight: 300;
+    font-weight: 100;
     font-size: 12px;
     color: var(--font-color);
 }
@@ -126,6 +129,7 @@ section {
 .site_logo {
     height: 59px;
     width: 127px;
+    filter: var(--logo-filter);
 }
 
 .bold_heading {
@@ -296,15 +300,15 @@ img {
 
 .bento_boxes {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto;
     gap: 10px;
     transition: transform ease .5s ease;
-    max-width: 75%;
+    max-width: 93%;
+    overscroll-behavior: auto;
 }
 
 ._box {
-    display: table;
     padding: 25px;
     background: rgba(255, 255, 255, 0.24);
     border-radius: 16px;
@@ -348,7 +352,7 @@ img {
     right: 0;
     width: 450px; 
     max-height: 650px; 
-    background-color: #f4f4f4;
+    background-color: var(--bg);
     border: 1px solid #d3d3d3; 
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
@@ -356,12 +360,13 @@ img {
     display: none;
     flex-direction: column;
     overflow: hidden; 
+    transition: transform .5s ease;
 }
 
 
 .chat-messages {
     padding: 10px;
-    background: #ffffff; 
+    background: var(--bg); 
     border-radius: 8px;
     height: 200px; 
     overflow-y: auto;
@@ -439,6 +444,7 @@ img {
     border: none;
     background-color: transparent;
     cursor: pointer;
+    filter: var(--logo-filter);
 }
 
 .chatbot-toggle img, .chatbot-toggle .fa {
