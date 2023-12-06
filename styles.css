@@ -87,12 +87,6 @@ body {
     overscroll-behavior: auto;
 }
 
-/* [class*="col"]  * + *,
-[class*="container"] > .row{
-  margin-top: 0;
-  margin-bottom: 1.5em;
-} */
-
 h1, h2, h3 {
     font-family: "museo-sans";
 }
@@ -207,46 +201,92 @@ img {
 
 /* Accessibility tools sticky */
 
-.accs_tools {
+.sticky-menu {
     position: fixed;
-    display: inline-flex;
-    align-items: baseline;
-    width: 50px;
-    height: 35px;
-    background-color: var(--bg);
-    left: calc(var(--pad) * 1.5);
-    margin: -0.1em 0 0 -0.04em;
+    display: flex;
     bottom: var(--pad);
+    left: calc(var(--pad) * 1.5);
     z-index: 5;
-}
+    align-items: center;
+  }
 
-.accs_tools_content {
-    display: grid;
+  .sticky-menu.left {
+    left: 0;
+  }
+
+  .sticky-menu nav {
+    position: relative;
+  }
+
+  .sticky-menu nav label[for=trigger] {
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+    padding: 6px 11px;
+    background: #fff;
+    color: #1976d2;
+    border-radius: 4px;
+    margin: 6px;
+    box-shadow: 0 2px 4px rgba(15, 15, 15, 0.25);
+  }
+
+  .sticky-menu nav ul {
+    display: none;
+    position: absolute;
+    border-radius: 4px;
+    margin: 3px 6px;
+    padding: 4px 4px;
+    list-style: none;
+    background: #fff;
+    bottom: 100%;
+  }
+
+  .left .sticky-menu nav ul {
+    left: 0;
+  }
+
+  .sticky-menu nav ul li {
+    display: none;
+  }
+
+  .sticky-menu nav ul a {
+    display: block;
+    color: #1976d2;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+  }
+
+  .sticky-menu nav ul a:hover {
+    color: #fff;
+    background: #004ba0;
+  }
+  .sticky-menu.left #trigger {
+    display: none;
+  }
+
+  .sticky-menu.left #trigger:checked + ul {
+    display: block;
+  }
+
+  .sticky-menu.left #trigger:checked + ul li {
     opacity: 0;
-}
-
-.accs_tools:hover .accs_tools_content {
-    opacity: 1;
-}
-
-.accs_icon {
-    height: 30px;
-    width: 30px;
-    margin-left: -100px;
-    opacity: 1;
-}
-
-.accs_tools:hover .accs_icon {
-    opacity: 0;
-}
+    animation: fadein 500ms ease-in-out forwards;
+    display: block;
+  }
+  
+  @keyframes fadein {
+    100% {
+      opacity: 1;
+    }
+  }
 
 /* Dark/light mode selector */
 
 .dark-mode-toggle {
-    position: absolute;
+    position: relative;
+    display: flex;
     z-index: 100;
-    top: 1em;
-    right: 1em;
     color: var(--accents);
     border: 2px solid currentColor;
     padding: 4px;
@@ -255,7 +295,21 @@ img {
     border-radius: 5px;
     width: 30px;
     height: 30px;
+    bottom: 3px;
   }
+
+.sticky-menu label[for=trigger]:hover {
+    color: #fff;
+    background: #004ba0;
+}
+
+.darklightmode {
+    display: flex;
+    font-family: 'museo-sans';
+    font-weight: 100;
+    margin-left: 50px;
+    max-width: 100%;
+}
 
 /* Scroll arrow */
 
@@ -451,3 +505,7 @@ img {
     height: 40px; 
     width: 40px;
 }
+
+._adjustable_text {
+    transition: font-size 0.3s ease;
+  }

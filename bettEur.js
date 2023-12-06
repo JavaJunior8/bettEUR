@@ -109,31 +109,12 @@ function appendMessage(message, isUserMessage) {
 
 darkModeToggle.addEventListener('click', () => {
   darkMode = localStorage.getItem('darkMode'); 
-
   if (darkMode !== 'enabled') {
     enableDarkMode();
   } else {  
     disableDarkMode(); 
   }
 });
-
-// Adjustable font-size
-
-// (function(){
-//     var fontSizeSlider = $("#font_size_slider");
-//     var fontSizeValueText = $("#font_size_value");
-//     var htmlElement = $("html");
-//     var bodyElement = $("body");
-//     fontSizeValueText.html("Base font size: " + bodyElement.css("font-size"));
-//     fontSizeSlider.on("input change", changeFontSize);
-    
-//     function changeFontSize(e) {
-//       var currentVal = fontSizeSlider.val();
-//       htmlElement.css("font-size", currentVal + "px");
-//       bodyElement.css("font-size", currentVal + "px");
-//       fontSizeValueText.html("Base font size: " + currentVal + "px");
-//     }
-//   })();
 
 // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function() {
@@ -187,4 +168,29 @@ document.addEventListener('DOMContentLoaded', function() {
       inputField.value = ""
   });
 });
+
+// Accessbility tools sticky menu
+
+$(function() {
+  $("#trigger").on("click", function() {
+    if($("#trigger").is(":checked")) {
+      $(".click-here").fadeOut("fast");
+    }
+  });
+  
+});
+
+// font-size slider
+$(function () {
+  const fontSizeSlider = document.getElementById('fontSizeSlider');
+  const adjustableTextElements = document.querySelectorAll('._adjustable_text');
+
+  fontSizeSlider.addEventListener('input', function () {
+    const fontSizeValue = fontSizeSlider.value + 'px';
+    adjustableTextElements.forEach(element => {
+      element.style.fontSize = fontSizeValue;
+    });
+  });
+});
+
 
