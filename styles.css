@@ -499,13 +499,32 @@ img {
     background-color: transparent;
     cursor: pointer;
     filter: var(--logo-filter);
+    bottom: 0px;
 }
 
 .chatbot-toggle img, .chatbot-toggle .fa {
-    height: 40px; 
-    width: 40px;
+    height: 180px; 
+    width: 180px;
+    bottom: 0px;
+    filter: var(--logo-filter);
 }
 
 ._adjustable_text {
     transition: font-size 0.3s ease;
   }
+
+
+#chatbot-trigger-image {
+    position: fixed;
+    bottom: 170px; /* Adjust as needed */
+    right: 160px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it's above other elements */
+    transform: scale(1.5); /* Scaling the image */
+    transform-origin: bottom right; /* Adjusting the origin of transformation */
+    /* Add overrides below */
+    width: auto; /* Resets width, if needed */
+    height: auto; /* Resets height, if needed */
+    max-width: none; /* Override max-width */
+    max-height: none; /* Override max-height */
+    /* Add any other properties that need to be reset or overridden */
+}

@@ -223,8 +223,11 @@ if (darkMode === 'enabled') {
 
 chatButton.addEventListener('click', () => {
   var chatWindow = document.getElementById('chatbot-window');
+  var textbox = document.getElementById('chatbot-trigger-image');
   console.log(chatWindow.style.display)
   chatWindow.style.display = chatWindow.style.display != 'block' ? 'block' : 'none';
+  textbox.style.display = 'none';
+  
 });
 
 chatbotClose.addEventListener('click', () => {
@@ -269,6 +272,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
   console.log("Page loaded")
   console.log(stringSimilarity.compareTwoStrings('what!', 'who?'));
+
+  setTimeout(function() {
+      document.getElementById('chatbot-trigger-image').style.display = 'block';
+  }, 8000);
+
+  // document.getElementById('chatbot-trigger-image').addEventListener('click', function() {
+  //     console.log("image clicked")
+  // });
 
   document.getElementById('chat-input').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
@@ -339,6 +350,10 @@ $(function () {
       element.style.fontSize = fontSizeValue;
     });
   });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+
 });
 
 
