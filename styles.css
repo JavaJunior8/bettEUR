@@ -516,10 +516,10 @@ img {
 
 #chatbot-trigger-image {
     position: fixed;
-    bottom: 170px; /* Adjust as needed */
+    bottom: 120px; /* Adjust as needed */
     right: 160px; /* Adjust as needed */
     z-index: 1000; /* Ensure it's above other elements */
-    transform: scale(1.5); /* Scaling the image */
+    transform: scale(0.7); /* Scaling the image */
     transform-origin: bottom right; /* Adjusting the origin of transformation */
     /* Add overrides below */
     width: auto; /* Resets width, if needed */

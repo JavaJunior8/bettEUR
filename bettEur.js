@@ -1,6 +1,6 @@
 // darkmode
 let darkMode = localStorage.getItem('darkMode'); 
-
+let sizeScalar = localStorage.setItem('sizeScalar', '0')
 
 const darkModeToggle = document.querySelector('#dark-mode-toggle');
 const chatButton = document.querySelector('#chatbot-toggle');
@@ -270,7 +270,7 @@ darkModeToggle.addEventListener('click', () => {
 // Wait for the DOM to load
 document.addEventListener('DOMContentLoaded', function() {
 
-  console.log("Page loaded")
+  console.log("Page loaded2")
   console.log(stringSimilarity.compareTwoStrings('what!', 'who?'));
 
   setTimeout(function() {
@@ -339,21 +339,52 @@ $(function() {
   
 });
 
+// // font-size slider
+// $(function () {
+//   const fontSizeSlider = document.getElementById('fontSizeSlider');
+//   const adjustableTextElements = document.querySelectorAll('._adjustable_text');
+
+//   fontSizeSlider.addEventListener('input', function () {
+//     const fontSizeValue = fontSizeSlider.value + 'px';
+//     adjustableTextElements.forEach(element => {
+//       console.log(element.style)
+//       oldScalar = parseFloat(localStorage.getItem('sizeScalar'))
+//       originalValue = element.style.fontSize / oldScalar
+//       newValue = originalValue * fontSizeValue / 100
+//       console.log("fontsize: " + element.style.fontSize + " storage:" + oldScalar  + " Original: " + originalValue, " New: " + newValue)
+//       element.style.fontSize = newValue;
+//     });
+//   });
+// });
+
+// document.addEventListener('DOMContentLoaded', function() {
+
+// });
+
 // font-size slider
 $(function () {
   const fontSizeSlider = document.getElementById('fontSizeSlider');
   const adjustableTextElements = document.querySelectorAll('._adjustable_text');
 
   fontSizeSlider.addEventListener('input', function () {
-    const fontSizeValue = fontSizeSlider.value + 'px';
+    const fontSizeValue = fontSizeSlider.value;
     adjustableTextElements.forEach(element => {
-      element.style.fontSize = fontSizeValue;
+
+      console.log("start: " + window.getComputedStyle(element).fontSize)
+
+      let computedFontSize = parseInt(window.getComputedStyle(element).fontSize.slice(0, -2));
+      // console.log("fontsize: " + computedFontSize);
+      // console.log(element.style.fontSize)
+      // console.log(localStorage.getItem('sizeScalar'))
+      oldScalar = parseInt(localStorage.getItem('sizeScalar'))
+      originalValue = computedFontSize - oldScalar
+      newValue = originalValue + parseInt(fontSizeValue)
+      console.log("fontsize: " + computedFontSize + " slider " + parseInt(fontSizeValue) + " storage:" + oldScalar  + " originalValue: " + originalValue, " New: " + newValue)
+      element.style.fontSize = newValue + 'px';
+      // console.log("end: " + window.getComputedStyle(element).fontSize)
     });
+    localStorage.setItem('sizeScalar', fontSizeValue)
   });
-});
-
-document.addEventListener('DOMContentLoaded', function() {
-
 });
 
 
