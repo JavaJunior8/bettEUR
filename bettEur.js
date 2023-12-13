@@ -364,27 +364,47 @@ $(function() {
 // font-size slider
 $(function () {
   const fontSizeSlider = document.getElementById('fontSizeSlider');
-  const adjustableTextElements = document.querySelectorAll('._adjustable_text');
+  // const adjustableTextElements = document.querySelectorAll('._adjustable_text');
+  const adjustableTextElements = document.querySelectorAll('*');
 
   fontSizeSlider.addEventListener('input', function () {
     const fontSizeValue = fontSizeSlider.value;
     adjustableTextElements.forEach(element => {
 
-      console.log("start: " + window.getComputedStyle(element).fontSize)
-
-      let computedFontSize = parseInt(window.getComputedStyle(element).fontSize.slice(0, -2));
-      // console.log("fontsize: " + computedFontSize);
-      // console.log(element.style.fontSize)
-      // console.log(localStorage.getItem('sizeScalar'))
-      oldScalar = parseInt(localStorage.getItem('sizeScalar'))
-      originalValue = computedFontSize - oldScalar
-      newValue = originalValue + parseInt(fontSizeValue)
-      console.log("fontsize: " + computedFontSize + " slider " + parseInt(fontSizeValue) + " storage:" + oldScalar  + " originalValue: " + originalValue, " New: " + newValue)
-      element.style.fontSize = newValue + 'px';
-      // console.log("end: " + window.getComputedStyle(element).fontSize)
+      originalFontSize = getFontSizeFromClass(element)
+      if (originalFontSize != null) {
+        newFontSize = originalFontSize * parseInt(fontSizeValue) / 100
+        console.log(" slider " + parseInt(fontSizeValue) + " originalFontSize: " + originalFontSize, " newFontSize: " + newFontSize)
+        element.style.fontSize = newFontSize + 'px';
+      }
     });
-    localStorage.setItem('sizeScalar', fontSizeValue)
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var allElements = document.querySelectorAll('*');
+
+  allElements.forEach(function(element) {
+
+      if (element.textContent.trim().length > 0) {
+          var fontSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
+
+          element.classList.add('font-size-' + fontSize.replace('px', ''));
+      }
+  });
+});
+
+function getFontSizeFromClass(element) {
+  // Loop through all classes of the element
+  for (let className of element.classList) {
+      // Check if the class name starts with 'font-size-'
+      if (className.startsWith('font-size-')) {
+          // Extract and return the font size
+          return parseInt(className.split('-')[2]);
+      }
+  }
+  return null; // Return null if no font-size class is found
+}
+
 
 
