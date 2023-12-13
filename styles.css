@@ -60,7 +60,7 @@ ul, li {
 }
 
 :root {
-    --gradient: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,35,40,1) 0%, rgba(4,65,60,1) 20%, rgba(6,79,69,1) 40%, rgba(8,94,79,1) 60%, rgba(10,112,91,1) 80%, rgba(12,128,102,1) 100%);
+    --gradient: rgba(12,128,102,1);
     --bg: #ffffff;
     --font-color: #ffffff;
     --nav-font-color: #002328;
@@ -69,6 +69,7 @@ ul, li {
 }
 
 .darkmode {
+    --gradient: #000000;
     --bg: #002328;
     --accents: #ffffff;
     --nav-font-color: #ffffff;
@@ -130,7 +131,7 @@ section {
     position: relative;
     font-size: 40px;
     font-weight: 900;
-    color: var(--font-color);
+    color: #ffffff;
     padding: 25px;
     margin-left: 1.8%;
 }
@@ -172,7 +173,7 @@ section {
     font-size: 50px;
     left: calc(var(--pad) * 1.5);
     bottom: 45%;
-    color: var(--font-color);
+    color: #ffffff;
     visibility: hidden;
     opacity: 0;
     z-index: 1;
@@ -223,7 +224,7 @@ img {
     cursor: pointer;
     user-select: none;
     padding: 6px 11px;
-    background: #fff;
+    background: var(--bg);
     color: #1976d2;
     border-radius: 4px;
     margin: 6px;
@@ -237,7 +238,7 @@ img {
     margin: 3px 6px;
     padding: 4px 4px;
     list-style: none;
-    background: #fff;
+    background: var(--bg);
     bottom: 100%;
   }
 
@@ -281,6 +282,32 @@ img {
     }
   }
 
+/* Font slider styling */
+
+.slider-container {
+    color: var(--accents);
+  }
+
+input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+background: var(--accents);
+height: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 15px;
+    width: 15px;
+    background: rgba(12,128,102,1);
+    margin-top: -5px;
+    border-radius: 50%;
+}
+
+
 /* Dark/light mode selector */
 
 .dark-mode-toggle {
@@ -321,27 +348,29 @@ img {
     position: absolute;
     left: 48%;
     bottom: 2.5%;
+    transition-property: opacity;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
+}
+
+._downarrow {
     animation: bounce 5s infinite;
     -webkit-animation: bounce 5s infinite;
     animation-delay: 10s;
     -webkit-animation-delay: 10s;
 }
 
-/* ._downarrow:hover {
-    
-} */
-
 /* bento style website navigation panel */
 
 #_bento {
-    background-color: #0C8066;
+    background-color: var(--gradient);
 }
 
 .bento_heading {
     position: relative;
     font-size: 40px;
     font-weight: 900;
-    color: var(--font-color);
+    color: #ffffff;
     padding: 25px;
     margin-left: 1.8%;
 }
@@ -381,13 +410,14 @@ img {
     font-size: 20px;
     font-weight: 300;
     margin: 5px;
-    color: var(--font-color);
+    color: #ffffff;
     position: relative;
 }
 
 .bento_info {
     margin: 5px;
     position: relative;
+    color: #ffffff;
 }
 
 .chatbot-toggle {
@@ -414,7 +444,9 @@ img {
     display: none;
     flex-direction: column;
     overflow: hidden; 
-    transition: transform .5s ease;
+    transition-property: opacity;
+    transition-duration: .4s;
+    transition-timing-function: cubic-bezier(0.1, 0.4, 0.2, 1);
 }
 
 
@@ -477,36 +509,37 @@ img {
 
 .user-message {
     background-color: #e0e0e0;
-    margin-left: auto; 
+    margin-left: auto;
+    font-family: 'museo-sans'; 
 }
 
 .bot-message {
-    background-color: #0C8066; 
+    background-color: #0C8066;
+    font-family: 'museo-sans';
+    font-size: 14px;
+    color: #FFFFFF;
     margin-right: auto; 
 }
 
 .chatbot-header {
     background-color: #e0e0e0;
-    font-family: 'Museo Sans', sans-serif; 
+    font-family: 'Museo-Sans', sans-serif; 
     font-size: 24px;       
     padding: 15px;    
     text-align: center;       
 }
 
-
 .chatbot-toggle {
     border: none;
     background-color: transparent;
     cursor: pointer;
-    filter: var(--logo-filter);
-    bottom: 0px;
+    bottom: -2px;
 }
 
 .chatbot-toggle img, .chatbot-toggle .fa {
-    height: 180px; 
-    width: 180px;
+    height: 150px; 
+    width: 150px;
     bottom: 0px;
-    filter: var(--logo-filter);
 }
 
 ._adjustable_text {
