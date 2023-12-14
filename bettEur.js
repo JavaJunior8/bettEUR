@@ -199,6 +199,14 @@ const jsonData = {
   {
     "question": "What mental health resources are available?",
     "answer": "Mental health resources include counseling services, support groups, and referrals to mental health professionals."
+  },
+  {
+    "question": "Thanks",
+    "answer": "You're welcome! Anything else I can help you with today?"
+  },
+  {
+    "question": "No thank you",
+    "answer": "Have a nice day!"
   }
   ]
   }
