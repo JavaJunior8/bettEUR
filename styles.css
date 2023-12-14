@@ -211,27 +211,34 @@ img {
     align-items: center;
   }
 
-  .sticky-menu.left {
+.accs_icon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: -20px;
+    filter: var(--logo-filter);
+}
+
+.sticky-menu.left {
     left: 0;
-  }
+}
 
-  .sticky-menu nav {
+.sticky-menu nav {
     position: relative;
-  }
+}
 
-  .sticky-menu nav label[for=trigger] {
+.sticky-menu nav label[for=trigger] {
     font-size: 24px;
     cursor: pointer;
     user-select: none;
-    padding: 6px 11px;
+    padding: 20px 11px;
     background: var(--bg);
     color: #1976d2;
     border-radius: 4px;
     margin: 6px;
     box-shadow: 0 2px 4px rgba(15, 15, 15, 0.25);
-  }
+}
 
-  .sticky-menu nav ul {
+.sticky-menu nav ul {
     display: none;
     position: absolute;
     border-radius: 4px;
@@ -240,47 +247,47 @@ img {
     list-style: none;
     background: var(--bg);
     bottom: 100%;
-  }
+}
 
-  .left .sticky-menu nav ul {
+.left .sticky-menu nav ul {
     left: 0;
-  }
+}
 
-  .sticky-menu nav ul li {
+.sticky-menu nav ul li {
     display: none;
-  }
+}
 
-  .sticky-menu nav ul a {
+.sticky-menu nav ul a {
     display: block;
     color: #1976d2;
     text-decoration: none;
     border-radius: 4px;
     padding: 4px 10px;
-  }
+}
 
-  .sticky-menu nav ul a:hover {
+.sticky-menu nav ul a:hover {
     color: #fff;
     background: #004ba0;
-  }
-  .sticky-menu.left #trigger {
+}
+.sticky-menu.left #trigger {
     display: none;
-  }
+}
 
-  .sticky-menu.left #trigger:checked + ul {
+.sticky-menu.left #trigger:checked + ul {
     display: block;
-  }
+}
 
-  .sticky-menu.left #trigger:checked + ul li {
+.sticky-menu.left #trigger:checked + ul li {
     opacity: 0;
     animation: fadein 500ms ease-in-out forwards;
     display: block;
-  }
-  
-  @keyframes fadein {
+}
+
+@keyframes fadein {
     100% {
-      opacity: 1;
+        opacity: 1;
     }
-  }
+}
 
 /* Font slider styling */
 
