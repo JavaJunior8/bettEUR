@@ -185,13 +185,6 @@ section {
     opacity: 1;
 }
 
-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .8s ease;
-}
-
 .main_link {
     position: absolute;
     right: 10%;
@@ -212,10 +205,12 @@ img {
   }
 
 .accs_icon {
+    display: inline-flex;
     width: 55px;
     height: 55px;
     margin-bottom: -20px;
     filter: var(--logo-filter);
+    -webkit-filter: var(--logo-filter);
 }
 
 .sticky-menu.left {
@@ -293,7 +288,8 @@ img {
 
 .slider-container {
     color: var(--accents);
-  }
+    margin-bottom: 10px;
+}
 
 input[type="range"] {
     appearance: none;
